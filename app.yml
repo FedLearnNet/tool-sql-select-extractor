@@ -1,0 +1,78 @@
+config:
+  hyperparams:
+    - name: sql_distribution
+      description: SQL database distribution / dialect to connect to.
+      type: CATEGORICAL
+      default: postgres
+      options: [postgres, mysql, sqlite]
+      minValue: null
+      maxValue: null
+      pattern: null
+    - name: host
+      description: Database host (ignored for sqlite).
+      type: STRING
+      default: host.docker.internal
+      options: []
+      minValue: null
+      maxValue: null
+      pattern: null
+    - name: port
+      description: Database port (ignored for sqlite).
+      type: INTEGER
+      default: "5432"
+      options: []
+      minValue: 1.0
+      maxValue: 65535.0
+      pattern: null
+    - name: database
+      description: Database name (or sqlite file path / ':memory:' for sqlite).
+      type: STRING
+      default: demo
+      options: []
+      minValue: null
+      maxValue: null
+      pattern: null
+    - name: username
+      description: Database username (ignored for sqlite unless configured).
+      type: STRING
+      default: demo
+      options: []
+      minValue: null
+      maxValue: null
+      pattern: null
+    - name: password
+      description: Database password (ignored for sqlite unless configured).
+      type: STRING
+      default: demo
+      options: []
+      minValue: null
+      maxValue: null
+      pattern: null
+    - name: sql_select
+      description: Single SELECT (or WITH ... SELECT) statement. Write/DDL statements are blocked.
+      type: STRING
+      default: "SELECT * FROM patients LIMIT 10"
+      options: []
+      minValue: null
+      maxValue: null
+      pattern: null
+  input: []
+  output:
+    - name: dataset
+      description: Query result as a single CSV table.
+      type: CSV
+      required: false
+      delimiter: null
+      hasHeader: null
+      shape: null
+      minValue: null
+      maxValue: null
+      tabularSchema: null
+
+info:
+  name: tool-sql-select-extractor
+  slug: tool-sql-select-extractor
+  type: EXTRACTOR
+  sourceUrl: https://github.com/FedLearnNet/tool-sql-select-extractor
+  shortDescription: Extracts SQL SELECT query results from PostgreSQL, MySQL, or SQLite databases as CSV.
+  longDescription: null
