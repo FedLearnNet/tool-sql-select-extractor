@@ -70,8 +70,8 @@ config:
       tabularSchema: null
 
 info:
-  name: tool-sql-select-extractor
-  slug: tool-sql-select-extractor
+  name: sql-select-extractor
+  slug: sql-select-extractor
   type: EXTRACTOR
   sourceUrl: https://github.com/FedLearnNet/tool-sql-select-extractor
   shortDescription: Extracts SQL SELECT query results from PostgreSQL, MySQL, or SQLite databases as CSV.

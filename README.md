@@ -1,4 +1,4 @@
-# tool-sql-select-extractor
+# sql-select-extractor
 
 Extracts SQL SELECT query results from PostgreSQL, MySQL, or SQLite databases as CSV.
 
